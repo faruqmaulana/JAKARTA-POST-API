@@ -32,7 +32,7 @@ export default async function handler(req, res) {
       index.push({
         title,
         category,
-        premium_badge,
+        premium_bdge,
         lazy_image,
         alt_image,
         link,
