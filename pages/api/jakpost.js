@@ -2,14 +2,14 @@ import { first } from "cheerio/lib/api/traversing";
 import middleware from "./middleware/middleware";
 const axios = require("axios");
 const cheerio = require("cheerio");
-const url = "https://www.thejakartapost.com/indonesia/politics";
+const url = "https://www.thejakartapost.com/indonesia/jakarta";
 const Cors = require("cors");
 const cors = Cors({
   methods: ["POST"],
 });
 
-export default async function handler(req, res) {
-  await middleware(req, res, cors);
+export default async function handler(request, response) {
+  await middleware(request, response, cors);
 
   let result = axios.get(url).then((res) => {
     const html = res.data;
@@ -25,17 +25,18 @@ export default async function handler(req, res) {
       const badge = $(this).find("a span.premiumBadge span").text().replace(/^\s+|\s+$/gm, "");
       const premium_badge = badge === "" ? "not premium" : badge;
       const category = $(this).find(".dt-news").text();
-      const link = url + $(".imageLatest", this).find("a").attr("href");
+      /* prettier-ignore */
+      const slug = $(".imageLatest", this).find("a").attr("href").replace(/([a-zA-Z])/g, "");
       const lazy_image = url + $(".imageLatest", this).find("img").attr("src");
       const alt_image = $(".imageLatest", this).find("img.lazy").attr("alt");
 
       index.push({
+        slug,
         title,
         category,
         premium_badge,
         lazy_image,
         alt_image,
-        link,
       });
     });
 
@@ -48,5 +49,5 @@ export default async function handler(req, res) {
     };
   });
 
-  return res.json(await result);
+  return response.json(await result);
 }
