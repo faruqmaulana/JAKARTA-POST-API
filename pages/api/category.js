@@ -11,7 +11,7 @@ export default async function handler(req, res) {
 
     let list = $("div.no-padding .row");
     let index = [];
-    for (let iterate = 1; iterate <= 15; iterate++) {
+    for (let iterate = 4; iterate <= 15; iterate++) {
       const slug = $(`li.tjp-li-${iterate}`)
         .children()
         .first()
@@ -48,9 +48,6 @@ export default async function handler(req, res) {
         categories: categories.length !== 0 ? categories : null,
       });
     }
-    index.shift();
-    index.shift();
-    index.shift();
     return {
       message: "succes",
       result: {

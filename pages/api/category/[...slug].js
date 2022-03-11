@@ -15,6 +15,30 @@ export default async function handler(req, res) {
     const html = res.data;
     const $ = cheerio.load(html);
 
+    //featured_posts
+    const slug = $(".bigHeadline .descNews a")
+      .next()
+      .attr("href")
+      .replace(".html", "");
+    const images = $("figure img").attr("data-src");
+    const caption_image = $("figcaption").text().trim();
+    const headline = $(".descNews p").first().text().trim();
+    const title = $(".descNews h2.titleNews").first().text().trim();
+    const category = $(".descNews span.dt-news").first().text().trim();
+    const pusblised_at = $(".bigHeadline .descNews span").last().text().trim();
+    const featured_post = [
+      {
+        slug,
+        title,
+        images,
+        headline,
+        category,
+        caption_image,
+        pusblised_at,
+      },
+    ];
+
+    //posts
     let list = $(".tjp-newsListing .listNews");
     let index = [];
 
@@ -55,8 +79,8 @@ export default async function handler(req, res) {
     return {
       message: "succes",
       result: {
-        length: index.length,
-        data: index,
+        featured_post,
+        posts: index,
       },
     };
   });
