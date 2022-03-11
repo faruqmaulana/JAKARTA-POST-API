@@ -36,8 +36,6 @@ export default async function handler(req, res) {
         $(this).find(".latestDetail p").html()
       );
 
-      console.log(typeof headline);
-
       const category = $(this).find(".dt-news").text();
       const title = $(this).find(".titleNews").text().trim();
       const premium_badge = badge === "" ? "not premium" : badge;
