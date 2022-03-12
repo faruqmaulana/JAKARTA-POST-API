@@ -35,7 +35,10 @@ export default async function handler(req, res) {
       .each((i, el) => {
         const sub_category = $(el).text();
         const sub_link =
-          CATEGORY + $(el).attr("href").replace(BASE_URL_SLUG, "");
+          CATEGORY +
+          "/category" +
+          $(el).attr("href").replace(BASE_URL_SLUG, "");
+
         return categories.push({
           sub_link,
           sub_category,
