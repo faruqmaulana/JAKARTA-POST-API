@@ -50,5 +50,6 @@ export default async function handler(req, res) {
       categories: categories.length !== 0 ? categories : null,
     });
   }
+  category.splice(1, 1);
   return res.json({ status, category });
 }
