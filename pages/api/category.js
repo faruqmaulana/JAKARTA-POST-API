@@ -1,55 +1,51 @@
 import middleware from "./middleware/middleware";
-import { cors, axios, cheerio, BASE_URL, BASE_URL_SLUG } from "./utils/utils";
+import { cors, CATEGORY, BASE_URL_SLUG } from "./utils/const";
+import { scrapeSite } from "./utils/utils";
 
 export default async function handler(req, res) {
   await middleware(req, res, cors);
+  const { $, status } = await scrapeSite("");
 
-  let result = axios.get(BASE_URL).then((res) => {
-    const html = res.data;
-    const $ = cheerio.load(html);
+  // get category
+  let category = [];
+  for (let iterate = 4; iterate <= 13; iterate++) {
+    const getLink = $("li.tjp-li-" + iterate)
+      .children()
+      .first()
+      .attr("href")
+      .replace(BASE_URL_SLUG, "");
+    const link =
+      getLink !== "/most-viewed"
+        ? CATEGORY + "/category" + getLink
+        : CATEGORY + getLink;
 
-    let index = [];
-    for (let iterate = 4; iterate <= 13; iterate++) {
-      const slug = $(`li.tjp-li-${iterate}`)
-        .children()
-        .first()
-        .attr("href")
-        .replace(BASE_URL_SLUG, "");
-      const name = $(`li.tjp-li-${iterate}`)
-        .children()
-        .first()
-        .text()
-        .replace(/^\s+|\s+$/gm, "");
+    const name = $("li.tjp-li-" + iterate)
+      .children()
+      .first()
+      .text()
+      .replace(/^\s+|\s+$/gm, "");
 
-      const sub = $(`li.tjp-li-${iterate}`)
-        .children()
-        .last()
-        .children()
-        .find("a");
-
-      let categories = [];
-      sub.each(function (i, e) {
-        const sub_slug = $(this).attr("href").replace(BASE_URL_SLUG, "");
-        const sub_category = $(this).text();
+    //get sub category
+    let categories = [];
+    $("li.tjp-li-" + iterate)
+      .children()
+      .last()
+      .children()
+      .find("a")
+      .each((i, el) => {
+        const sub_category = $(el).text();
+        const sub_link =
+          CATEGORY + $(el).attr("href").replace(BASE_URL_SLUG, "");
         return categories.push({
-          sub_slug,
+          sub_link,
           sub_category,
         });
       });
-      index.push({
-        slug,
-        name,
-        categories: categories.length !== 0 ? categories : null,
-      });
-    }
-    return {
-      message: "succes",
-      result: {
-        length: index.length,
-        data: index,
-      },
-    };
-  });
-
-  return res.json(await result);
+    category.push({
+      link,
+      name,
+      categories: categories.length !== 0 ? categories : null,
+    });
+  }
+  return res.json({ status, category });
 }
