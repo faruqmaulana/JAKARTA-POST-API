@@ -1,13 +1,16 @@
-const TurndownService = require("turndown");
-export const turndownService = new TurndownService();
-export const axios = require("axios");
-export const cheerio = require("cheerio");
-export const Cors = require("cors");
-export const cors = Cors({
-  methods: ["POST"],
-});
-export const BASE_URL = "https://www.thejakartapost.com/";
-export const BASE_URL_SLUG = "http://www.thejakartapost.com";
-export const SUBSCRIBE_V1 = "\n\nStarting from IDR 55,000/month";
-export const SUBSCRIBE_V2 =
-  "\n\nStarting from IDR 55,000/month\n\nOr let Google manage your subscription";
+import { axios, cheerio, BASE_URL } from "./const";
+import { Agent } from "https";
+const agent = new Agent({ rejectUnauthorized: false });
+export const scrapeSite = async (endpoint) => {
+  try {
+    const fetchSite = await axios.get(`${BASE_URL}${endpoint}`, {
+      httpsAgent: agent,
+    });
+    const html = await fetchSite.data;
+    const status = fetchSite.status;
+    const $ = cheerio.load(html);
+    return { $, status };
+  } catch (e) {
+    return Promise.reject(e);
+  }
+};

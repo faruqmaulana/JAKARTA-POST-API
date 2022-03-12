@@ -1,51 +1,39 @@
 import middleware from "./middleware/middleware";
-import { cors, axios, cheerio, BASE_URL } from "./utils/utils";
-
-export default async function handler(req, res) {
+import { scrapeSite } from "./utils/utils";
+import { cors } from "./utils/const";
+export default async function mostViewed(req, res) {
   await middleware(req, res, cors);
+  const { $, status } = await scrapeSite("most-viewed");
+  console.log(status);
+  const posts = [];
 
-  let result = axios.get(BASE_URL + "most-viewed").then((res) => {
-    const html = res.data;
-    const $ = cheerio.load(html);
+  $(".bgSingle .listNews").each((i, el) => {
+    const slug = $(el)
+      .find(".imageNews")
+      .find("a")
+      .attr("href")
+      .replace(".html", "");
 
-    let list = $(".bgSingle .listNews");
-    let index = [];
+    const pusblised_at = $(el)
+      .find("span.date")
+      .clone()
+      .children()
+      .remove()
+      .end()
+      .text();
 
-    list.each(function (v, i) {
-      const slug = $(".imageNews", this)
-        .find("a")
-        .attr("href")
-        .replace(".html", "");
+    const category = $(el).find("span span").text();
+    const title = $(el).find(".titleNews").text().trim();
+    const image = $(el).find(".imageNews").find("img").attr("data-src");
 
-      const pusblised_at = $(this)
-        .find("span.date")
-        .clone()
-        .children()
-        .remove()
-        .end()
-        .text();
-
-      const category = $("span span", this).text();
-      const title = $(this).find(".titleNews").text().trim();
-      const image = $(".imageNews", this).find("img").attr("data-src");
-
-      index.push({
-        slug,
-        title,
-        image,
-        category,
-        pusblised_at,
-      });
+    posts.push({
+      slug,
+      title,
+      image,
+      category,
+      pusblised_at,
     });
-
-    return {
-      message: "succes",
-      result: {
-        length: index.length,
-        data: index,
-      },
-    };
   });
 
-  return res.json(await result);
+  return res.json({ status, posts });
 }
