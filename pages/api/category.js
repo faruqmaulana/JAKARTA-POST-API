@@ -1,6 +1,13 @@
 import { children } from "cheerio/lib/api/traversing";
 import middleware from "./middleware/middleware";
-import { cors, axios, cheerio, BASE_URL, BASE_URL_SLUG } from "./utils/utils";
+import {
+  cors,
+  axios,
+  cheerio,
+  BASE_URL,
+  BASE_URL_SLUG,
+  VERCEL_HOST,
+} from "./utils/utils";
 
 export default async function handler(req, res) {
   await middleware(req, res, cors);
@@ -9,14 +16,16 @@ export default async function handler(req, res) {
     const html = res.data;
     const $ = cheerio.load(html);
 
-    let list = $("div.no-padding .row");
     let index = [];
     for (let iterate = 4; iterate <= 15; iterate++) {
-      const slug = $(`li.tjp-li-${iterate}`)
-        .children()
-        .first()
-        .attr("href")
-        .replace(BASE_URL_SLUG, "");
+      const slug =
+        VERCEL_HOST +
+        "category" +
+        $(`li.tjp-li-${iterate}`)
+          .children()
+          .first()
+          .attr("href")
+          .replace(BASE_URL_SLUG, "");
       const name = $(`li.tjp-li-${iterate}`)
         .children()
         .first()
@@ -28,10 +37,6 @@ export default async function handler(req, res) {
         .last()
         .children()
         .find("a");
-
-      // const html = $.html(
-      //   $(`li.tjp-li-${iterate}`).children().last().children().children()
-      // );
 
       let categories = [];
       sub.each(function (i, e) {
@@ -59,27 +64,3 @@ export default async function handler(req, res) {
 
   return res.json(await result);
 }
-
-// const slug = $(this).find("li a.tjp-has-submenu").attr("href");
-// const category = $(this).find("a.tjp-has-submenu").text();
-// const cat = $(this).find("").text();
-// const getSubCat = $(this).find("ul li");
-
-// getSubCat.each(function (x, y) {
-//   const name = $(this).find("li a").text();
-//   const slug = $(this).find("li a").attr("href");
-//   // console.log({ category, slug, name });
-// });
-// if (slug !== undefined) {
-// }
-
-// list.each(function (v, i) {
-//   const dataNav = $(this).find("li").clone().children().remove().end();
-//   dataNav.each(function (x, y) {
-//     const slug = $(this).attr("href");
-//     const category = $(this)
-//       .text()
-//       .replace(/^\s+|\s+$/gm, "");
-//     const html = $.html($(this));
-//   });
-// });
