@@ -11,5 +11,3 @@ export const BASE_URL_SLUG = "http://www.thejakartapost.com";
 export const SUBSCRIBE_V1 = "\n\nStarting from IDR 55,000/month";
 export const SUBSCRIBE_V2 =
   "\n\nStarting from IDR 55,000/month\n\nOr let Google manage your subscription";
-
-export const VERCEL_HOST = "https://jakpost.vercel.app/api/";

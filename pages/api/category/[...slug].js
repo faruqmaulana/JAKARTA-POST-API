@@ -5,7 +5,6 @@ import {
   cheerio,
   BASE_URL,
   turndownService,
-  VERCEL_HOST,
 } from "../utils/utils";
 
 export default async function handler(req, res) {
@@ -22,10 +21,10 @@ export default async function handler(req, res) {
       const $ = cheerio.load(html);
 
       //featured_posts
-      const slug =
-        VERCEL_HOST +
-        "detailpost" +
-        $(".bigHeadline .descNews a").next().attr("href").replace(".html", "");
+      const slug = $(".bigHeadline .descNews a")
+        .next()
+        .attr("href")
+        .replace(".html", "");
       const images = $("figure img").attr("data-src");
       const caption_image = $("figcaption").text().trim();
       const headline = $(".descNews p").first().text().trim();
@@ -60,14 +59,15 @@ export default async function handler(req, res) {
           .find("a span.premiumBadge span")
           .text()
           .replace(/^\s+|\s+$/gm, "");
-        const slug =
-          VERCEL_HOST +
-          "detailpost" +
-          $(".imageLatest", this).find("a").attr("href").replace(".html", "");
+        const slug = $(".imageLatest", this)
+          .find("a")
+          .attr("href")
+          .replace(".html", "");
 
         const headline = turndownService.turndown(
           $(this).find(".latestDetail p").html()
         );
+
         const category = $(this).find(".dt-news").text();
         const title = $(this).find(".titleNews").text().trim();
         const premium_badge = badge === "" ? "not premium" : badge;

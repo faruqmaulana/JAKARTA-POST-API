@@ -1,13 +1,5 @@
-import { children } from "cheerio/lib/api/traversing";
 import middleware from "./middleware/middleware";
-import {
-  cors,
-  axios,
-  cheerio,
-  BASE_URL,
-  BASE_URL_SLUG,
-  VERCEL_HOST,
-} from "./utils/utils";
+import { cors, axios, cheerio, BASE_URL, BASE_URL_SLUG } from "./utils/utils";
 
 export default async function handler(req, res) {
   await middleware(req, res, cors);
@@ -17,15 +9,12 @@ export default async function handler(req, res) {
     const $ = cheerio.load(html);
 
     let index = [];
-    for (let iterate = 4; iterate <= 15; iterate++) {
-      const slug =
-        VERCEL_HOST +
-        "category" +
-        $(`li.tjp-li-${iterate}`)
-          .children()
-          .first()
-          .attr("href")
-          .replace(BASE_URL_SLUG, "");
+    for (let iterate = 4; iterate <= 13; iterate++) {
+      const slug = $(`li.tjp-li-${iterate}`)
+        .children()
+        .first()
+        .attr("href")
+        .replace(BASE_URL_SLUG, "");
       const name = $(`li.tjp-li-${iterate}`)
         .children()
         .first()
