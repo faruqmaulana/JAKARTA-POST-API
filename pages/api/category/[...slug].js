@@ -41,7 +41,7 @@ export default async function handler(req, res) {
 
     const link =
       DETAIL_POST +
-      $(".imageLatest", el).find("a").attr("href").replace(".html", "");
+      $(el).find(".imageLatest a").attr("href").replace(".html", "");
 
     const headline = turndownService.turndown(
       $(el).find(".latestDetail p").html()
