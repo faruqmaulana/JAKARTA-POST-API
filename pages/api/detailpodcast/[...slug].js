@@ -1,10 +1,4 @@
-import {
-  cors,
-  PODCAST_CONTENT,
-  SUBSCRIBE_V1,
-  SUBSCRIBE_V2,
-  turndownService,
-} from "../utils/const";
+import { cors, turndownService, PODCAST_CONTENT } from "../utils/const";
 import { scrapeSite } from "../utils/utils";
 import runMiddleware from "../middleware/middleware";
 

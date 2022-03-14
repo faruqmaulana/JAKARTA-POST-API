@@ -1,9 +1,9 @@
 import runMiddleware from "../middleware/middleware";
 import {
-  BASE_URL,
-  BASE_URL_SLUG,
   cors,
+  BASE_URL,
   DETAIL_POST,
+  BASE_URL_SLUG,
   ENCRYPTED_IMG,
   turndownService,
 } from "../utils/const";

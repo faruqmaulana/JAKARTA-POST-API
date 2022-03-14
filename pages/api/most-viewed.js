@@ -30,6 +30,7 @@ export default async function mostViewed(req, res) {
       .end()
       .text()
       .trim();
+
     const image = $(el).find(".imageNews").find("img").attr("data-src");
 
     posts.push({
