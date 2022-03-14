@@ -35,9 +35,9 @@ export default async function handler(req, res) {
     .replace(SUBSCRIBE_V1, "")
     .replace(SUBSCRIBE_V2, "");
 
-  const image = $(".main-single img").attr("data-src");
   const title = $(".title-large").text().trim();
   const author = $("span.writerName").text().trim();
+  const image = $('meta[property="og:image"]').attr("content");
   const pusblised_at = $("div.post-like span.day").text();
 
   return res.json({
