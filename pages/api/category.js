@@ -1,9 +1,11 @@
 import middleware from "./middleware/middleware";
-import { cors, CATEGORY, BASE_URL_SLUG } from "./utils/const";
+import { cors, CATEGORY, BASE_URL_SLUG, VERCEL_BASE_URL } from "./utils/const";
 import { scrapeSite } from "./utils/utils";
 
 export default async function handler(req, res) {
   await middleware(req, res, cors);
+
+  // make request
   const { $, status } = await scrapeSite("");
 
   // get category
@@ -39,16 +41,21 @@ export default async function handler(req, res) {
       .find("a")
       .each((i, el) => {
         const sub_category = $(el).text();
+        const getSubLink = $(el)
+          .attr("href")
+          .replace(BASE_URL_SLUG, VERCEL_BASE_URL + "/category");
+
         const sub_link =
-          CATEGORY +
-          "/category" +
-          $(el).attr("href").replace(BASE_URL_SLUG, "");
+          getSubLink === VERCEL_BASE_URL + "/category/multimedia/podcast"
+            ? VERCEL_BASE_URL + "/podcast"
+            : getSubLink;
 
         return categories.push({
           sub_link,
           sub_category,
         });
       });
+
     category.push({
       link,
       name,
