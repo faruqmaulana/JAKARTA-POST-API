@@ -23,7 +23,7 @@ export default async function handler(req, res) {
     .replace(/●/g, "")
     .trim();
 
-  const image_source = $(".main-single span.created:first")
+  const img_desc = $(".main-single span.created:first")
     .text()
     .trim()
     .replace(/  /, " ");
@@ -45,12 +45,12 @@ export default async function handler(req, res) {
     desclaimer:
       "the post content return markdown, you should use plugin like markdown-it, react-markdown, and etc",
     detail_post: {
+      title,
+      image,
+      img_desc,
       author,
       location,
       pusblised_at,
-      title,
-      image,
-      image_source,
       post_content: markdown,
     },
   });
