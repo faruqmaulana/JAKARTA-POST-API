@@ -18,10 +18,18 @@ export default async function mostViewed(req, res) {
       .children()
       .remove()
       .end()
-      .text();
+      .text()
+      .trim();
 
     const category = $(el).find("span span").text();
-    const title = $(el).find(".titleNews").text().trim();
+    const title = $(el)
+      .find(".titleNews")
+      .clone()
+      .children()
+      .remove()
+      .end()
+      .text()
+      .trim();
     const image = $(el).find(".imageNews").find("img").attr("data-src");
 
     posts.push({

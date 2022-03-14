@@ -14,16 +14,21 @@ export default async function handler(req, res) {
       .first()
       .attr("href")
       .replace(BASE_URL_SLUG, "");
-    const link =
-      getLink !== "/most-viewed"
-        ? CATEGORY + "/category" + getLink
-        : CATEGORY + getLink;
 
-    const name = $("li.tjp-li-" + iterate)
+    const link =
+      getLink === "/most-viewed"
+        ? CATEGORY + getLink
+        : getLink === "/multimedia"
+        ? CATEGORY + "/category/front-row"
+        : CATEGORY + "/category" + getLink;
+
+    const getName = $("li.tjp-li-" + iterate)
       .children()
       .first()
       .text()
       .replace(/^\s+|\s+$/gm, "");
+
+    const name = getName === "MULTIMEDIA" ? "FRONT ROW" : getName;
 
     //get sub category
     let categories = [];

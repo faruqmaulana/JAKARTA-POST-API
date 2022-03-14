@@ -4,7 +4,6 @@ import { cors, DETAIL_POST, turndownService } from "../utils/const";
 
 export default async function handler(req, res) {
   await middleware(req, res, cors);
-  console.log(req.query);
   const { slug } = req.query;
   const query = slug.length !== 2 ? slug.splice(2).join("=") : slug.join("/");
   const REQUEST_URL = slug.join("/") + "?" + query;
@@ -15,8 +14,8 @@ export default async function handler(req, res) {
   const link =
     DETAIL_POST +
     $(".bigHeadline .descNews a").next().attr("href").replace(".html", "");
-  const images = $("figure img").attr("data-src");
-  const caption_image = $("figcaption").text().trim();
+  const image = $("figure img").attr("data-src");
+  const image_desc = $("figcaption").text().trim();
   const headline = $(".descNews p").first().text().trim();
   const title = $(".descNews h2.titleNews").first().text().trim();
   const category = $(".descNews span.dt-news").first().text().trim();
@@ -25,10 +24,10 @@ export default async function handler(req, res) {
     {
       link,
       title,
-      images,
+      image,
       headline,
       category,
-      caption_image,
+      image_desc,
       pusblised_at,
     },
   ];
