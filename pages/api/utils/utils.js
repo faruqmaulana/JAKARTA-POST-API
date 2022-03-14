@@ -2,6 +2,7 @@ import { BASE_URL } from "./const";
 import puppeteer from "puppeteer";
 import cheerio from "cheerio";
 import axios from "axios";
+import chrome from "chrome-aws-lambda";
 export const scrapeSite = async (endpoint) => {
   try {
     const fetchSite = await axios.get(`${BASE_URL}${endpoint}`);
@@ -16,12 +17,15 @@ export const scrapeSite = async (endpoint) => {
 
 export const puppeteerOpenBrowser = async (endpoint) => {
   const browser = await puppeteer.launch({
-    headless: true,
+    args: chrome.args,
+    executablePath: await chrome.executablePath,
+    headless: chrome.headless,
   });
+
   const page = await browser.newPage();
-  await page.goto(`${BASE_URL}${endpoint}`, { waitUntil: "load" });
+  await page.goto(`${BASE_URL}${endpoint}`, { waitUntil: "load", timeout: 0 });
   const content = await page.content();
   const $ = cheerio.load(content);
-  browser.close();
+  await browser.close();
   return { $ };
 };
