@@ -13,8 +13,8 @@ export const getDynamicCategory = async (endpoint) => {
 
     const link =
       endpoint === "hashtag/Commentary"
-        ? getLink.replace(BASE_URL, `${VERCEL_BASE_URL}/detailpost/`)
-        : `${VERCEL_BASE_URL}/detailpost/${getLink}`;
+        ? getLink.replace(BASE_URL, VERCEL_BASE_URL + "/detailpost/")
+        : VERCEL_BASE_URL + "/detailpost/" + getLink;
 
     const pusblised_at = $(el)
       .find("span.date")
