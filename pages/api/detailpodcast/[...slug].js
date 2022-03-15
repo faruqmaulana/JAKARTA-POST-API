@@ -1,5 +1,6 @@
 import {
   cors,
+  MARKDOWN,
   ERROR_MESSAGE,
   PODCAST_CONTENT,
   turndownService,
@@ -8,8 +9,9 @@ import { scrapeSite } from "../utils/utils";
 import runMiddleware from "../middleware/middleware";
 
 export default async function handler(req, res) {
+  await runMiddleware(req, res, cors);
+
   try {
-    await runMiddleware(req, res, cors);
     //get query params
     const { slug } = req.query;
     const url = slug.join("/") + ".html";
@@ -28,13 +30,13 @@ export default async function handler(req, res) {
       .turndown(content)
       .replace(PODCAST_CONTENT, "");
 
+    const audio = $("audio").attr("src");
     const title = $("h1.title-large").text().trim();
     const image = $('meta[property="og:image"]').attr("content");
-    const audio = $("audio").attr("src");
+
     return res.json({
       status,
-      important:
-        "detail_podcast return markdown, you should use plugin like markdown-it, react-markdown, and etc",
+      important: MARKDOWN,
       detail_podcast: {
         date,
         title,

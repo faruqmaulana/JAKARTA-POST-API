@@ -1,5 +1,6 @@
 import {
   cors,
+  MARKDOWN,
   SUBSCRIBE_V1,
   SUBSCRIBE_V2,
   ERROR_MESSAGE,
@@ -16,6 +17,12 @@ export default async function handler(req, res) {
     const url = slug.join("/") + ".html";
     const { $, status } = await scrapeSite(url);
 
+    const content = $.html(".main-single p");
+    const post_content = turndownService
+      .turndown(content)
+      .trim()
+      .replace(SUBSCRIBE_V1, "")
+      .replace(SUBSCRIBE_V2, "");
     const location = $("div.post-like span.posting")
       .clone()
       .children()
@@ -24,28 +31,19 @@ export default async function handler(req, res) {
       .text()
       .replace(/●/g, "")
       .trim();
-
     const image_desc = $(".main-single span.created:first")
       .text()
       .trim()
       .replace(/  /, " ");
 
-    const content = $.html(".main-single p");
-    const post_content = turndownService
-      .turndown(content)
-      .trim()
-      .replace(SUBSCRIBE_V1, "")
-      .replace(SUBSCRIBE_V2, "");
-
     const title = $(".title-large").text().trim();
     const author = $("span.writerName").text().trim();
-    const image = $('meta[property="og:image"]').attr("content");
     const pusblised_at = $("div.post-like span.day").text();
+    const image = $('meta[property="og:image"]').attr("content");
 
     return res.json({
       status,
-      important:
-        "post_content return markdown, you should use plugin like markdown-it, react-markdown, and etc",
+      important: MARKDOWN,
       detail_post: {
         title,
         image,
