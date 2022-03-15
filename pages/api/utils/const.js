@@ -8,6 +8,7 @@ export const cors = Cors({
 
 // export const
 export const message = "gagal mengambil data";
+export const ERROR_MESSAGE = "path not found dude";
 export const BASE_URL = "https://www.thejakartapost.com/";
 export const BASE_URL_SLUG = "http://www.thejakartapost.com";
 export const VERCEL_BASE_URL = "https://jakpost.vercel.app/api";
