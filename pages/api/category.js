@@ -18,9 +18,7 @@ export default async function handler(req, res) {
       .replace(BASE_URL_SLUG, "");
 
     const link =
-      getLink === "/most-viewed"
-        ? VERCEL_BASE_URL + getLink
-        : getLink === "/multimedia"
+      getLink === "/multimedia"
         ? VERCEL_BASE_URL + "/category/front-row"
         : VERCEL_BASE_URL + "/category" + getLink;
 
