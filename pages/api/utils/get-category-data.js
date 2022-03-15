@@ -1,16 +1,20 @@
-import middleware from "./middleware/middleware";
-import { scrapeSite } from "./utils/utils";
-import { cors, DETAIL_POST } from "./utils/const";
+import { BASE_URL, VERCEL_BASE_URL } from "./const";
+import { scrapeSite } from "./utils";
 
-export default async function mostViewed(req, res) {
-  await middleware(req, res, cors);
-  const { $, status } = await scrapeSite("most-viewed");
+export const getDynamicCategory = async (endpoint) => {
+  const { $, status } = await scrapeSite(endpoint);
   const posts = [];
-
   $(".bgSingle .listNews").each((i, el) => {
+    const getLink = $(el)
+      .find(".imageNews")
+      .find("a")
+      .attr("href")
+      .replace(".html", "");
+
     const link =
-      DETAIL_POST +
-      $(el).find(".imageNews").find("a").attr("href").replace(".html", "");
+      endpoint === "hashtag/Commentary"
+        ? getLink.replace(BASE_URL, `${VERCEL_BASE_URL}/detailpost/`)
+        : `${VERCEL_BASE_URL}/detailpost/${getLink}`;
 
     const pusblised_at = $(el)
       .find("span.date")
@@ -42,5 +46,5 @@ export default async function mostViewed(req, res) {
     });
   });
 
-  return res.json({ status, posts });
-}
+  return { status, posts };
+};

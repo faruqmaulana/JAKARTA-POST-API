@@ -1,5 +1,5 @@
 import middleware from "./middleware/middleware";
-import { cors, CATEGORY, BASE_URL_SLUG, VERCEL_BASE_URL } from "./utils/const";
+import { cors, VERCEL_BASE_URL, BASE_URL_SLUG } from "./utils/const";
 import { scrapeSite } from "./utils/utils";
 
 export default async function handler(req, res) {
@@ -19,10 +19,10 @@ export default async function handler(req, res) {
 
     const link =
       getLink === "/most-viewed"
-        ? CATEGORY + getLink
+        ? VERCEL_BASE_URL + getLink
         : getLink === "/multimedia"
-        ? CATEGORY + "/category/front-row"
-        : CATEGORY + "/category" + getLink;
+        ? VERCEL_BASE_URL + "/category/front-row"
+        : VERCEL_BASE_URL + "/category" + getLink;
 
     const getName = $("li.tjp-li-" + iterate)
       .children()
