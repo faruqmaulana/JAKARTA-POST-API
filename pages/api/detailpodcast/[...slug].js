@@ -8,9 +8,8 @@ import { scrapeSite } from "../utils/utils";
 import runMiddleware from "../middleware/middleware";
 
 export default async function handler(req, res) {
-  await runMiddleware(req, res, cors);
-
   try {
+    await runMiddleware(req, res, cors);
     //get query params
     const { slug } = req.query;
     const url = slug.join("/") + ".html";
