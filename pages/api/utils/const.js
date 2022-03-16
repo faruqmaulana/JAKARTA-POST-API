@@ -5,7 +5,6 @@ export const turndownService = new TurndownService();
 export const cors = Cors({
   methods: ["POST"],
 });
-
 // export const
 export const message = "gagal mengambil data";
 export const ERROR_MESSAGE = "path not found dude";
