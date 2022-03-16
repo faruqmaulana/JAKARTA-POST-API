@@ -1,7 +1,7 @@
 <div align="center">
 <h1>JAKARTA POST API</h1>
 <p><a href="https://jakpost.vercel.app/api">JAKARTA POST API</a> merupakan API hasil scraping website media berita <a href="https://www.thejakartapost.com/">Jakarta Post.</a> Jika anda menemukan error pada API ini, maka ada kemumngkinan terjadi perubahan DOM structure pada web tersebut. Jika hal tersebut terjadi, anda bisa melapor dengan cara melakukan pull request.</p>
-<b>Mulai project anda jadilah produktif 🔥</b>
+<b>Mulai project anda dan jadilah produktif 🔥</b>
 </div>
 
 ## Routes
@@ -113,6 +113,9 @@ Jika Anda menggunakan API ini di aplikasi yang anda buat, Anda bisa mendaftarkan
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 ---
+
+![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)
+![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)
 
 ## License
 
