@@ -1,7 +1,7 @@
 <div align="center">
 <h1>JAKARTA POST API</h1>
-<p>JAKARTA POST API merupakan API hasil scraping website media berita <a href="https://www.thejakartapost.com/">Jakarta Post </a> Jika terdapat error pada API ini, maka ada kemumngkinan terjadi perubahan DOM structure pada web tersebut. Jika anda menemukan error pada API ini, silahkan melapor dengan melakukan pull request. </p>
-<p>Mulai project anda jadilah produktif 🔥</p>
+<p><a href="https://jakpost.vercel.app/api">JAKARTA POST API</a> merupakan API hasil scraping website media berita <a href="https://www.thejakartapost.com/">Jakarta Post.</a> Jika anda menemukan error pada API ini, maka ada kemumngkinan terjadi perubahan DOM structure pada web tersebut. Jika hal tersebut terjadi, anda bisa melapor dengan cara melakukan pull request.</p>
+<b>Mulai project anda jadilah produktif 🔥</b>
 </div>
 
 ## Routes
