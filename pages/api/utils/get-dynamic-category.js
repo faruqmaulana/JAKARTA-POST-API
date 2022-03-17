@@ -47,7 +47,7 @@ export const getDynamicCategory = async (endpoint) => {
       });
     });
 
-    return { status, featured_post: null, posts };
+    return { status, featured_post: null, posts, pagination: null };
   } else {
     const link =
       VERCEL_BASE_URL +
@@ -69,6 +69,10 @@ export const getDynamicCategory = async (endpoint) => {
       image_desc,
       pusblised_at,
     };
+
+    const currentPage = $("span.currentPagi input").attr("value");
+    const totalPage = $("span.currentPagi input").attr("max");
+    const pagination = { currentPage, totalPage };
 
     const posts = [];
     $(".tjp-newsListing .listNews").each((i, el) => {
@@ -103,6 +107,11 @@ export const getDynamicCategory = async (endpoint) => {
       });
     });
 
-    return { status, featured_post, posts };
+    return {
+      status,
+      featured_post,
+      posts,
+      pagination,
+    };
   }
 };
