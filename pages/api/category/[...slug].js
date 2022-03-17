@@ -1,6 +1,6 @@
 import middleware from "../middleware/middleware";
 import { getDynamicCategory } from "../utils/get-dynamic-category";
-import { cors, ERROR_MESSAGE } from "../utils/const";
+import { cors, ERROR_MESSAGE, HASTAG_COMMENTARY } from "../utils/const";
 
 export default async function handler(req, res) {
   await middleware(req, res, cors);
@@ -9,9 +9,17 @@ export default async function handler(req, res) {
     //get query params
     const { slug } = req.query;
 
-    // wrong logic
+    // get url request
     const query = slug.length !== 2 ? slug.splice(2).join("=") : slug.join("/");
-    const REQUEST_URL = slug.join("/") + "?" + query;
+    const getRequestUrl = slug.join("/") + "?" + query;
+    const REQUEST_URL =
+      getRequestUrl === "most-viewed?"
+        ? getRequestUrl.replace("?", "")
+        : getRequestUrl === HASTAG_COMMENTARY
+        ? getRequestUrl.replace(HASTAG_COMMENTARY, "hashtag/Commentary")
+        : getRequestUrl;
+
+    console.log(REQUEST_URL);
 
     //make request
     const { status, featured_post, posts, pagination } =

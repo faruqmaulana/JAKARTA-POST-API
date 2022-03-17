@@ -11,6 +11,7 @@ export const ERROR_MESSAGE = "path not found dude";
 export const BASE_URL = "https://www.thejakartapost.com/";
 export const BASE_URL_SLUG = "http://www.thejakartapost.com";
 export const VERCEL_BASE_URL = "https://jakpost.vercel.app/api";
+export const HASTAG_COMMENTARY = "hashtag/Commentary?hashtag/Commentary";
 export const SUBSCRIBE_V1 = "\n\nStarting from IDR 55,000/month";
 export const SUBSCRIBE_V2 =
   "\n\nStarting from IDR 55,000/month\n\nOr let Google manage your subscription";

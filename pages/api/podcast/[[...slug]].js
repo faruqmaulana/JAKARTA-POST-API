@@ -1,13 +1,17 @@
-import runMiddleware from "./middleware/middleware";
-import { cors, BASE_URL, VERCEL_BASE_URL, ERROR_MESSAGE } from "./utils/const";
-import { scrapeSite } from "./utils/utils";
+import { checkEmptyObj, scrapeSite } from "../utils/utils";
+import runMiddleware from "../middleware/middleware";
+import { cors, BASE_URL, VERCEL_BASE_URL, ERROR_MESSAGE } from "../utils/const";
 
 export default async function (req, res) {
   runMiddleware(req, res, cors);
 
   try {
+    //get query params
+    const { slug } = req.query;
+    const url = checkEmptyObj(req.query) === false ? slug.join("/") : "";
+
     // make request
-    const { $, status } = await scrapeSite("multimedia/podcast");
+    const { $, status } = await scrapeSite("multimedia/podcast/" + url);
 
     const link = $(".boxPodcast a")
       .attr("href")
@@ -65,9 +69,13 @@ export default async function (req, res) {
       });
     });
 
+    const currentPage = $(".navigation-page a.jp-current").text();
+    const totalPage = $(".navigation-page a.jp-number").last().text();
+    const pagination = { currentPage, totalPage };
+
     podcast.splice(0, 1);
 
-    return res.json({ status, featured_podcast, podcast });
+    return res.json({ status, featured_podcast, podcast, pagination });
   } catch {
     res.status(404).json({ status: 404, error: ERROR_MESSAGE });
   }

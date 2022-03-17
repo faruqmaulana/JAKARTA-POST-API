@@ -3,6 +3,7 @@ import puppeteer from "puppeteer";
 import cheerio from "cheerio";
 import axios from "axios";
 import chrome from "chrome-aws-lambda";
+
 export const scrapeSite = async (endpoint) => {
   try {
     const fetchSite = await axios.get(`${BASE_URL}${endpoint}`);
@@ -29,3 +30,8 @@ export const puppeteerOpenBrowser = async (endpoint) => {
   await browser.close();
   return { $ };
 };
+
+export function checkEmptyObj(obj) {
+  for (var i in obj) return false;
+  return true;
+}
