@@ -60,9 +60,9 @@ Bebebrapa route memiliki kategori, untuk lebih detailnya bisa anda cek dibawah :
 
 ## Penting ❗
 
-Dalam API ini ada beberapa data yang me-<i>return</i> `markdown`. Jika anda ingin menampilkan data tersebut didalam proyek anda, maka anda perlu mem-parsenya terlebih dahulu menggunakan `markdown-parser`. Banyak sekali `markdown parser` yang mungkin bisa anda gunakan seperti, [react-markdown](https://github.com/remarkjs/react-markdown), [markdown-it](https://github.com/markdown-it/markdown-it), [markedjs](https://github.com/markedjs/marked) dan masih banyak lagi.
+Dalam API ini ada beberapa data yang me-<i>return</i> `markdown`. Jika anda ingin menampilkan data tersebut didalam proyek anda, maka anda perlu mem-parsenya terlebih dahulu menggunakan `markdown parser`. Banyak sekali `markdown parser` yang mungkin bisa anda gunakan seperti, [react-markdown](https://github.com/remarkjs/react-markdown), [markdown-it](https://github.com/markdown-it/markdown-it), [markedjs](https://github.com/markedjs/marked) dan masih banyak lagi.
 
-#### Data yang me-return `markdown`
+### Data yang me-return `markdown`
 
 Bebeberapa data yang mereturn `markdown`
 
