@@ -91,15 +91,14 @@ Dalam API ini ada beberapa data yang me-<i>return</i> `markdown`. Jika anda ingi
 
 Jika Anda ingin menambahkan projek ini di komputer Anda sendiri, Anda bisa melakukan instalasi dengan mengikuti cara dibawah ini
 
-1. klon repositori ini
+1. klon repositori ini.
 
 ```
 git clone https://github.com/faruqmaulana/JAKARTA-POST-API.git
 ```
 
-<!-- prettier-ignore -->
-2. Unduh `dependencies`
-  <br>
+2. Unduh `dependencies`.
+
 dalam kasus saya, saya menggunakan `yarn` untuk `package manager`. Anda bisa menggunakan `package manager` kesukaan anda.
 
 ```
@@ -108,7 +107,7 @@ or
 npm install
 ```
 
-3. Run project
+3. Run project.
 
 ```
 yarn dev
