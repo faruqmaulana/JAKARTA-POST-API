@@ -36,7 +36,7 @@ export default async function handler(req, res) {
 
     return res.json({
       status,
-      important: MARKDOWN,
+      important: MARKDOWN("post_content"),
       detail_podcast: {
         date,
         title,

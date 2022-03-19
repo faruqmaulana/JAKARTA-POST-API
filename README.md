@@ -15,7 +15,7 @@
 
 ## Details
 
-```
+```bash
 ● /api/category
   > Menampilkan data kategori dan sub kategori
 
@@ -28,6 +28,7 @@
   > https://jakpost.vercel.app/api/category/indonesia                 => paginasi  ❌
   > https://jakpost.vercel.app/api/category/indonesia/politics/page/2 => paginasi  ✅
 
+
 ● /api/detailpost/[slug]
   > Menampilkan data detailpost
 
@@ -37,6 +38,20 @@
 ● /api/detailpodcast/[slug]
   > Menampilkan data detail podcast
 ```
+
+## Penting ❗
+
+Dalam API ini ada beberapa data yang me-return `markdown`. Jika anda ingin menampilkan data tersebut didalam website atau aplikasi yang anda buat maka anda perlu merubahnya kedalam bentuk html menggunakan `markdown-parser`. Banyak sekali `markdown parser` yang mungkin bisa anda gunakan seperti, [react-markdown](https://github.com/remarkjs/react-markdown), [markdown-it](https://github.com/markdown-it/markdown-it), [markedjs](https://github.com/markedjs/marked) dan masih banyak lagi.
+
+#### Data yang me-return `markdown`
+
+Bebeberapa data yang mereturn `markdown`
+
+1. headline
+   route ➡️ [[category/[slug]]](https://jakpost.vercel.app/api/category/indonesia)
+
+2. post_content
+   route ➡️ [/detailpost/[slug]]()
 
 # Teknologi yang di gunakan
 
@@ -73,7 +88,7 @@ yarn dev
 
 # Kontribusi
 
-Project ini bersifat open suource. Apabila anda menemukan bug atau anda memiliki saran terkait format API yang baik, anda bisa melakukan pull request diproject ini. Saya akan terbuka dengan segala bentuk kontribusi yang anda berikan dengan tujuan membuat project ini jadi lebih baik.
+Project ini bersifat <i><b>open source</b></i>. Apabila anda menemukan <i><b>bug</b></i> atau anda memiliki saran terkait format API yang baik, anda bisa melakukan <i><b>pull request</b></i> diproject ini. Saya akan terbuka dengan segala bentuk kontribusi yang anda berikan dengan tujuan membuat <i><b>project</b></i> ini jadi lebih baik.
 
 # Showcase
 

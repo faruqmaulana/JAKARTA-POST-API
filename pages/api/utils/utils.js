@@ -17,11 +17,10 @@ export const scrapeSite = async (endpoint) => {
   }
 };
 
-export const puppeteerOpeBrowser = async (endpoint) => {
+export const puppeteerOpenBrowser = async (endpoint) => {
   const browser = await puppeteer.launch({
     args: chrome.args,
     executablePath: await chrome.executablePath,
-    headless: chrome.headless,
   });
 
   const page = await browser.newPage();

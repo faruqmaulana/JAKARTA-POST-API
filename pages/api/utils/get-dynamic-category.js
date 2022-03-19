@@ -1,5 +1,5 @@
 import { scrapeSite } from "./utils";
-import { turndownService, BASE_URL, VERCEL_BASE_URL } from "./const";
+import { turndownService, BASE_URL, VERCEL_BASE_URL, MARKDOWN } from "./const";
 
 export const getDynamicCategory = async (endpoint) => {
   const { $, status } = await scrapeSite(endpoint);
@@ -109,6 +109,7 @@ export const getDynamicCategory = async (endpoint) => {
 
     return {
       status,
+      important: MARKDOWN("headline"),
       featured_post,
       posts,
       pagination,

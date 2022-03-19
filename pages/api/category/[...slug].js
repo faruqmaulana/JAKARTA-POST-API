@@ -19,14 +19,13 @@ export default async function handler(req, res) {
         ? getRequestUrl.replace(HASTAG_COMMENTARY, "hashtag/Commentary")
         : getRequestUrl;
 
-    console.log(REQUEST_URL);
-
     //make request
-    const { status, featured_post, posts, pagination } =
+    const { status, important, featured_post, posts, pagination } =
       await getDynamicCategory(REQUEST_URL);
 
     return res.json({
       status,
+      important,
       featured_post,
       posts,
       pagination: slug.length === 1 ? null : pagination,

@@ -7,6 +7,7 @@ import {
   ERROR_MESSAGE,
   VERCEL_BASE_URL,
   turndownService,
+  MARKDOWN,
 } from "../utils/const";
 import { puppeteerOpenBrowser } from "../utils/utils";
 
@@ -53,7 +54,7 @@ export default async function search(req, res) {
       });
     });
 
-    return res.json({ status: 200, data });
+    return res.json({ status: 200, important: MARKDOWN("headline"), data });
   } catch {
     res.status(404).json({ status: 404, error: ERROR_MESSAGE });
   }
