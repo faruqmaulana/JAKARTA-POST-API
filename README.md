@@ -97,7 +97,10 @@ Jika Anda ingin menambahkan projek ini di komputer Anda sendiri, Anda bisa melak
 git clone https://github.com/faruqmaulana/JAKARTA-POST-API.git
 ```
 
-2. Unduh `dependencies` dalam kasus saya, saya menggunakan `yarn` untuk `package manager`. Anda bisa menggunakan `package manager` kesukaan anda.
+<!-- prettier-ignore -->
+2. Unduh `dependencies`
+  <br>
+dalam kasus saya, saya menggunakan `yarn` untuk `package manager`. Anda bisa menggunakan `package manager` kesukaan anda.
 
 ```
 yarn install
