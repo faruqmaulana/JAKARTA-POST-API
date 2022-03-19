@@ -16,7 +16,7 @@
 
 ## Details
 
-```bash
+```
 ● /api/category
   > Menampilkan data kategori dan sub kategori
 
@@ -37,6 +37,9 @@
 
 ● /api/search/[search]/[sortby]/[page]
   > Menampilkan hasil pencarian
+  > Opsi pencarian yang bisa anda pilih
+    1. date       🡆 pencarian berdasarkan tanggal
+    2. relevance  🡆 pencarian berdasarkan relevansi
 
 ```
 
@@ -47,14 +50,14 @@ Bebebrapa route memiliki kategori, untuk lebih detailnya bisa anda cek dibawah :
 ```bash
 
 ● CATEGORY
-  > https://jakpost.vercel.app/api/category/indonesia/page/2 🡆 paginasi ❌
+  > https://jakpost.vercel.app/api/category/indonesia/page/2          🡆 paginasi ❌
   > https://jakpost.vercel.app/api/category/indonesia/politics/page/2 🡆 paginasi ✅
 
 ● PODCAST
-  > https://jakpost.vercel.app/api/podcast/page/2 🡆 paginasi ✅
+  > https://jakpost.vercel.app/api/podcast/page/2                     🡆 paginasi ✅
 
 ● SEARCH ENGINE
-  > https://jakpost.vercel.app/api/search/ukraine/relevance/1 🡆 paginasi ✅
+  > https://jakpost.vercel.app/api/search/ukraine/relevance/1         🡆 paginasi ✅
 
 ```
 
