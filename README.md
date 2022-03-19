@@ -81,7 +81,11 @@ Dalam API ini ada beberapa data yang me-<i>return</i> `markdown`. Jika anda ingi
    <br>
    route ➡️ [/api/detailpost/[slug]](https://jakpost.vercel.app/api/detailpost/indonesia/2022/03/18/government-outlines-carbon-sink-strategy-in-new-regulation)
 
-3. headline berita `search engine`
+3. post_content `detailpodcast`
+   <br>
+   route ➡️ [/api/detailpodcast/[slug]](https://jakpost.vercel.app/api/detailpodcast/multimedia/2020/08/27/sculpting-nations-the-politics-around-statues-in-asia)
+
+4. headline berita `search engine`
    <br>
    route ➡️ [/api/search/[search]/[sortby]/[page]](https://jakpost.vercel.app/api/search/ukraine/date/1)
 
