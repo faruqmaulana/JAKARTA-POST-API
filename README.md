@@ -41,17 +41,20 @@
 
 ## Penting ❗
 
-Dalam API ini ada beberapa data yang me-return `markdown`. Jika anda ingin menampilkan data tersebut didalam website atau aplikasi yang anda buat maka anda perlu merubahnya kedalam bentuk html menggunakan `markdown-parser`. Banyak sekali `markdown parser` yang mungkin bisa anda gunakan seperti, [react-markdown](https://github.com/remarkjs/react-markdown), [markdown-it](https://github.com/markdown-it/markdown-it), [markedjs](https://github.com/markedjs/marked) dan masih banyak lagi.
+Dalam API ini ada beberapa data yang me-return `markdown`. Jika anda ingin menampilkan data tersebut didalam proyek anda, maka anda perlu mem-parsenya terlebih dahulu menggunakan `markdown-parser`. Banyak sekali `markdown parser` yang mungkin bisa anda gunakan seperti, [react-markdown](https://github.com/remarkjs/react-markdown), [markdown-it](https://github.com/markdown-it/markdown-it), [markedjs](https://github.com/markedjs/marked) dan masih banyak lagi.
 
 #### Data yang me-return `markdown`
 
 Bebeberapa data yang mereturn `markdown`
 
-1. headline
+1. headline berita
    route ➡️ [[category/[slug]]](https://jakpost.vercel.app/api/category/indonesia)
 
 2. post_content
-   route ➡️ [/detailpost/[slug]]()
+   route ➡️ [/detailpost/[slug]](https://jakpost.vercel.app/api/detailpost/indonesia/2022/03/18/government-outlines-carbon-sink-strategy-in-new-regulation)
+
+3. headline berita `search engine`
+   route ➡️ [/search/[search]/[sortby]/[page]](https://jakpost.vercel.app/api/search/ukraine/date/10)
 
 # Teknologi yang di gunakan
 
