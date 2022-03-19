@@ -137,10 +137,8 @@ Jika Anda menggunakan API ini di <i>project</i> yang anda buat, Anda bisa mendaf
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
-<table>
-<tr>
-    <td align="center"><a href="https://fm-space.vercel.app"> <img src="https://avatars.githubusercontent.com/u/88839109?v=4?s=100" width="100px;" alt=""/> <br /> <sub><b>Faruq Maulana</b></sub> </a> <br /> <a href="https://github.com/faruqmaulana/JAKARTA-POST-API/commits?author=faruqmaulana" title="Code">💻</a> <a href="#refactoringCode-faruqmaulana" title="Refactoring Code">🔨</a> <a href="#Documentation-faruqmaulana" title="Documentation">📖</a> <a href="#maintenance-faruqmaulana" title="Maintenance">🚧</a> <a href="#ideas-faruqmaulana" title="Ideas, Planning, & Feedback">🤔</a> <a href="#ideas-faruqmaulana" title="Ideas, Planning, & Feedback">🤔</a> <a href="#ideas-faruqmaulana" title="Ideas, Planning, & Feedback">🤔</a> <a href="#ideas-faruqmaulana" title="Ideas, Planning, & Feedback">🤔</a> <a href="#ideas-faruqmaulana" title="Ideas, Planning, & Feedback">🤔</a> <a href="#ideas-faruqmaulana" title="Ideas, Planning, & Feedback">🤔</a> <a href="#ideas-faruqmaulana" title="Ideas, Planning, & Feedback">🤔</a> <a href="#ideas-faruqmaulana" title="Ideas, Planning, & Feedback">🤔</a> <a href="#ideas-faruqmaulana" title="Ideas, Planning, & Feedback">🤔</a> <a href="#ideas-faruqmaulana" title="Ideas, Planning, & Feedback">🤔</a> <a href="#ideas-faruqmaulana" title="Ideas, Planning, & Feedback">🤔</a> <a href="#ideas-faruqmaulana" title="Ideas, Planning, & Feedback">🤔</a> <a href="#ideas-faruqmaulana" title="Ideas, Planning, & Feedback">🤔</a> <a href="#ideas-faruqmaulana" title="Ideas, Planning, & Feedback">🤔</a> </td>
-  </tr>
+<table> <tr>
+    <td align="center"><a href="https://fm-space.vercel.app"> <img src="https://avatars.githubusercontent.com/u/88839109?v=4?s=100" width="100px;" alt=""/><br /> <sub><b>Faruq Maulana</b></sub></a><br /><a href="https://github.com/faruqmaulana/JAKARTA-POST-API/commits?author=faruqmaulana" title="Code">💻</a> <a href="#refactoringCode-faruqmaulana" title="Refactoring Code">🔨</a> <a href="#Documentation-faruqmaulana" title="Documentation">📖</a> <a href="#maintenance-faruqmaulana" title="Maintenance">🚧</a> <a href="#ideas-faruqmaulana" title="Ideas, Planning, & Feedback">🤔</a> </td></tr>
 </table>
 
 <!-- markdownlint-restore -->
