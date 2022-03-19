@@ -7,8 +7,8 @@
 ## Routes
 
 - [/api/category](https://jakpost.vercel.app/api/category)
-- [/api/category/[category]](https://jakpost.vercel.app/api/category/indonesia) => index
-- [/api/category/[category]/[sub_category]/page/[page]](https://jakpost.vercel.app/api/category/indonesia/politics/page/2) => sub kategori
+- [/api/category/[category]](https://jakpost.vercel.app/api/category/indonesia) 🡆 index
+- [/api/category/[category]/[sub_category]/page/[page]](https://jakpost.vercel.app/api/category/indonesia/politics/page/2) 🡆 sub kategori
 - [/api/detailpost/[slug]](https://jakpost.vercel.app/api/detailpost/indonesia/2022/03/16/police-looking-into-human-trafficking-violations-in-langkat-caging)
 - [/api/podcast](https://jakpost.vercel.app/api/category/podcast)
 - [/api/detailpodcast/[slug]](https://jakpost.vercel.app/api/detailpodcast/multimedia/2022/03/04/beyond-squid-game-translating-asian-film-and-tv-for-a-hungry-global-market)
@@ -47,7 +47,7 @@ Bebebrapa route memiliki kategori, untuk lebih detailnya bisa anda cek dibawah :
 ```bash
 
 ● CATEGORY
-  > https://jakpost.vercel.app/api/category/indonesia/page/2  🡆 paginasi ❌
+  > https://jakpost.vercel.app/api/category/indonesia/page/2 🡆 paginasi ❌
   > https://jakpost.vercel.app/api/category/indonesia/politics/page/2 🡆 paginasi ✅
 
 ● PODCAST
