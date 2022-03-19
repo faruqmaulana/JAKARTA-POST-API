@@ -54,7 +54,18 @@ export default async function search(req, res) {
       });
     });
 
-    return res.json({ status: 200, important: MARKDOWN("headline"), data });
+    //prettier-ignore
+    if (parseInt(page) > 10) return res.status(404).json({ status: 404, error: ERROR_MESSAGE });
+
+    return res.json({
+      status: 200,
+      important: MARKDOWN("headline"),
+      data,
+      pagination: {
+        currentPage: page !== "" ? parseInt(page) : 1,
+        totalPage: 10,
+      },
+    });
   } catch {
     res.status(404).json({ status: 404, error: ERROR_MESSAGE });
   }
