@@ -64,8 +64,6 @@ Dalam API ini ada beberapa data yang me-<i>return</i> `markdown`. Jika anda ingi
 
 ## ⚠️ Data yang me-return `markdown` ⚠️
 
-Bebeberapa data yang mereturn `markdown`
-
 1. headline berita
    route ➡️ [[category/[slug]]](https://jakpost.vercel.app/api/category/indonesia)
 
