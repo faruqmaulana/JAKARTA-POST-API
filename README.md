@@ -65,13 +65,15 @@ Dalam API ini ada beberapa data yang me-<i>return</i> `markdown`. Jika anda ingi
 ## ⚠️ Data yang me-return `markdown` ⚠️
 
 1. headline berita
-   route ➡️ [[category/[slug]]](https://jakpost.vercel.app/api/category/indonesia)
+   route ➡️ [/api/category/[category]](https://jakpost.vercel.app/api/category/indonesia)
+
+   route ➡️ [/api/category/[category]/[sub_category]/page/[page]](https://jakpost.vercel.app/api/category/indonesia)
 
 2. post_content
-   route ➡️ [/detailpost/[slug]](https://jakpost.vercel.app/api/detailpost/indonesia/2022/03/18/government-outlines-carbon-sink-strategy-in-new-regulation)
+   route ➡️ [/api/detailpost/[slug]](https://jakpost.vercel.app/api/detailpost/indonesia/2022/03/18/government-outlines-carbon-sink-strategy-in-new-regulation)
 
 3. headline berita `search engine`
-   route ➡️ [/search/[search]/[sortby]/[page]](https://jakpost.vercel.app/api/search/ukraine/date/1)
+   route ➡️ [/api/search/[search]/[sortby]/[page]](https://jakpost.vercel.app/api/search/ukraine/date/1)
 
 # Teknologi yang di gunakan
 
