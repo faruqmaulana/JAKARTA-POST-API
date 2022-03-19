@@ -10,7 +10,8 @@
 - [/api/category/[category]](https://jakpost.vercel.app/api/category/indonesia) 🡆 index
 - [/api/category/[category]/[sub_category]/page/[page]](https://jakpost.vercel.app/api/category/indonesia/politics/page/2) 🡆 sub kategori
 - [/api/detailpost/[slug]](https://jakpost.vercel.app/api/detailpost/indonesia/2022/03/16/police-looking-into-human-trafficking-violations-in-langkat-caging)
-- [/api/podcast](https://jakpost.vercel.app/api/category/podcast)
+- [/api/podcast](https://jakpost.vercel.app/api/podcast)
+- [/api/podcast/[slug]/page/[page]](https://jakpost.vercel.app/api/podcast/page/2)
 - [/api/detailpodcast/[slug]](https://jakpost.vercel.app/api/detailpodcast/multimedia/2022/03/04/beyond-squid-game-translating-asian-film-and-tv-for-a-hungry-global-market)
 - [/search/[search]/[sortby]/[page]](https://jakpost.vercel.app/api/search/ukraine/date/1)
 
@@ -58,6 +59,9 @@ Bebebrapa route memiliki kategori, untuk lebih detailnya bisa anda cek dibawah :
 
 ● SEARCH ENGINE
   > https://jakpost.vercel.app/api/search/ukraine/relevance/1          || paginasi ✅
+
+  note : jika anda tidak menambahkan parameter halaman, maka tidak akan terjadi error.
+         karena halaman akan otomatis default ke halaman 1.
 
 ```
 
