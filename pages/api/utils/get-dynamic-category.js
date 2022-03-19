@@ -72,7 +72,10 @@ export const getDynamicCategory = async (endpoint) => {
 
     const currentPage = $("span.currentPagi input").attr("value");
     const totalPage = $("span.currentPagi input").attr("max");
-    const pagination = { currentPage, totalPage };
+    const pagination = {
+      currentPage: parseInt(currentPage),
+      totalPage: parseInt(totalPage),
+    };
 
     const posts = [];
     $(".tjp-newsListing .listNews").each((i, el) => {

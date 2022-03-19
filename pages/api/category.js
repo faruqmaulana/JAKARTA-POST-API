@@ -66,7 +66,11 @@ export default async function handler(req, res) {
         categories: categories.length !== 0 ? categories : null,
       });
     }
+    // delete "most-shared" category, because "most-shared" category contains nothing
     category.splice(1, 1);
+    // delete "Longform Biz" sub-category, because "Longform Biz" sub-category does not contains news or podcasts
+    category[7].categories.splice(2, 1);
+
     return res.json({ status, category });
   } catch {
     res.status(404).json({ status: 404, error: ERROR_MESSAGE });
