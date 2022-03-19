@@ -12,6 +12,7 @@
 - [/api/detailpost/[slug]](https://jakpost.vercel.app/api/detailpost/indonesia/2022/03/16/police-looking-into-human-trafficking-violations-in-langkat-caging)
 - [/api/podcast](https://jakpost.vercel.app/api/category/podcast)
 - [/api/detailpodcast/[slug]](https://jakpost.vercel.app/api/detailpodcast/multimedia/2022/03/04/beyond-squid-game-translating-asian-film-and-tv-for-a-hungry-global-market)
+- [/search/[search]/[sortby]/[page]](https://jakpost.vercel.app/api/search/ukraine/date/1)
 
 ## Details
 
@@ -20,14 +21,10 @@
   > Menampilkan data kategori dan sub kategori
 
 ● /api/category/[slug]
+  > Menampilkan data berita dari kategori yang dipilih
+
 ● /api/category/[slug]/page/[page]
   > Menampilkan data berita dari kategori dan sub kategori yang dipilih.
-  > Semua sub kategori memiliki paginasi kecuali index.
-
-  === Detail ===
-  > https://jakpost.vercel.app/api/category/indonesia 🡆 paginasi  ❌
-  > https://jakpost.vercel.app/api/category/indonesia/politics/page/2 🡆 paginasi  ✅
-
 
 ● /api/detailpost/[slug]
   > Menampilkan data detailpost
@@ -37,6 +34,25 @@
 
 ● /api/detailpodcast/[slug]
   > Menampilkan data detail podcast
+
+```
+
+## Paginasi
+
+Bebebrapa route memiliki kategori, untuk lebih detailnya bisa anda cek dibawah :
+
+```bash
+
+● CATEGORY
+  > https://jakpost.vercel.app/api/category/indonesia 🡆 paginasi ❌
+  > https://jakpost.vercel.app/api/category/indonesia/politics/page/2 🡆 paginasi ✅
+
+● PODCAST
+  > https://jakpost.vercel.app/api/podcast/page/2 🡆 paginasi ✅
+
+● SEARCH ENGINE
+  > https://jakpost.vercel.app/api/search/ukraine/relevance/1 🡆 paginasi ✅
+
 ```
 
 ## Penting ❗
@@ -54,7 +70,7 @@ Bebeberapa data yang mereturn `markdown`
    route ➡️ [/detailpost/[slug]](https://jakpost.vercel.app/api/detailpost/indonesia/2022/03/18/government-outlines-carbon-sink-strategy-in-new-regulation)
 
 3. headline berita `search engine`
-   route ➡️ [/search/[search]/[sortby]/[page]](https://jakpost.vercel.app/api/search/ukraine/date/10)
+   route ➡️ [/search/[search]/[sortby]/[page]](https://jakpost.vercel.app/api/search/ukraine/date/1)
 
 # Teknologi yang di gunakan
 
