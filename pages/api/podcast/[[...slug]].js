@@ -71,7 +71,10 @@ export default async function (req, res) {
 
     const currentPage = $(".navigation-page a.jp-current").text();
     const totalPage = $(".navigation-page a.jp-number").last().text();
-    const pagination = { currentPage, totalPage };
+    const pagination = {
+      currentPage: parseInt(currentPage),
+      totalPage: parseInt(totalPage),
+    };
 
     podcast.splice(0, 1);
 
