@@ -1,14 +1,14 @@
 <div align="center">
 <h1>JAKARTA POST API</h1>
-<p><a href="https://jakpost.vercel.app/api">JAKARTA POST API</a> merupakan API hasil scraping website media berita <a href="https://www.thejakartapost.com/">Jakarta Post.</a> Jika anda menemukan error pada API ini, maka ada kemungkinan terjadi perubahan <i><b>DOM structure</b></i> pada web tersebut. Jika hal tersebut terjadi, anda bisa melaporkannya di <i><b>Issues</b></i>. Apabila anda ingin lebih jauh lagi seperti ikut kontribusi terhadap perubahan code, anda bisa memulainya dengan melakukan <i><b>pull request</b></i></p>
+<p><a href="https://jakpost.vercel.app/api">JAKARTA POST API</a> merupakan API hasil <i><b>scraping</b></i> website media berita <a href="https://www.thejakartapost.com/">Jakarta Post.</a> Jika anda menemukan error pada API ini, maka ada kemungkinan terjadi perubahan <i><b>DOM structure</b></i> pada web tersebut. Jika hal tersebut terjadi, anda bisa melaporkannya di <i><b>Issues</b></i>. Apabila anda ingin lebih jauh lagi seperti ikut kontribusi terhadap perubahan code, anda bisa memulainya dengan melakukan <i><b>pull request</b></i></p>
 <b>Mulai project anda dan jadilah produktif 🔥</b>
 </div>
 
 ## Routes
 
 - [/api/category](https://jakpost.vercel.app/api/category)
-- [/api/category/[slug]](https://jakpost.vercel.app/api/category/indonesia) => index
-- [/api/category/[slug]/page/[page]](https://jakpost.vercel.app/api/category/indonesia/politics/page/2) => sub kategori
+- [/api/category/[category]](https://jakpost.vercel.app/api/category/indonesia) => index
+- [/api/category/[category]/[sub_category]/page/[page]](https://jakpost.vercel.app/api/category/indonesia/politics/page/2) => sub kategori
 - [/api/detailpost/[slug]](https://jakpost.vercel.app/api/detailpost/indonesia/2022/03/16/police-looking-into-human-trafficking-violations-in-langkat-caging)
 - [/api/podcast](https://jakpost.vercel.app/api/category/podcast)
 - [/api/detailpodcast/[slug]](https://jakpost.vercel.app/api/detailpodcast/multimedia/2022/03/04/beyond-squid-game-translating-asian-film-and-tv-for-a-hungry-global-market)
@@ -20,20 +20,23 @@
 ● /api/category
   > Menampilkan data kategori dan sub kategori
 
-● /api/category/[slug]
+● /api/category/[category]
   > Menampilkan data berita dari kategori yang dipilih
 
-● /api/category/[slug]/page/[page]
-  > Menampilkan data berita dari kategori dan sub kategori yang dipilih.
+● /api/category/[category]/[sub_category]/page/[page]
+  > Menampilkan data berita dari sub kategori yang dipilih.
 
 ● /api/detailpost/[slug]
   > Menampilkan data detailpost
 
-● /api/podcast
+● /api/podcast/page/[page]
   > Menampilkan semua data podcast
 
 ● /api/detailpodcast/[slug]
   > Menampilkan data detail podcast
+
+● /api/search/[search]/[sortby]/[page]
+  > Menampilkan hasil pencarian
 
 ```
 
@@ -44,7 +47,7 @@ Bebebrapa route memiliki kategori, untuk lebih detailnya bisa anda cek dibawah :
 ```bash
 
 ● CATEGORY
-  > https://jakpost.vercel.app/api/category/indonesia 🡆 paginasi ❌
+  > https://jakpost.vercel.app/api/category/indonesia/page/2  🡆 paginasi ❌
   > https://jakpost.vercel.app/api/category/indonesia/politics/page/2 🡆 paginasi ✅
 
 ● PODCAST
@@ -57,7 +60,7 @@ Bebebrapa route memiliki kategori, untuk lebih detailnya bisa anda cek dibawah :
 
 ## Penting ❗
 
-Dalam API ini ada beberapa data yang me-return `markdown`. Jika anda ingin menampilkan data tersebut didalam proyek anda, maka anda perlu mem-parsenya terlebih dahulu menggunakan `markdown-parser`. Banyak sekali `markdown parser` yang mungkin bisa anda gunakan seperti, [react-markdown](https://github.com/remarkjs/react-markdown), [markdown-it](https://github.com/markdown-it/markdown-it), [markedjs](https://github.com/markedjs/marked) dan masih banyak lagi.
+Dalam API ini ada beberapa data yang me-<i>return</i> `markdown`. Jika anda ingin menampilkan data tersebut didalam proyek anda, maka anda perlu mem-parsenya terlebih dahulu menggunakan `markdown-parser`. Banyak sekali `markdown parser` yang mungkin bisa anda gunakan seperti, [react-markdown](https://github.com/remarkjs/react-markdown), [markdown-it](https://github.com/markdown-it/markdown-it), [markedjs](https://github.com/markedjs/marked) dan masih banyak lagi.
 
 #### Data yang me-return `markdown`
 
@@ -91,18 +94,20 @@ Jika Anda ingin menambahkan projek ini di komputer Anda sendiri, Anda bisa melak
 git clone https://github.com/faruqmaulana/JAKARTA-POST-API.git
 ```
 
-2. Unduh `dependencies`
+2. Unduh `dependencies` dalam kasus saya, saya menggunakan `yarn` untuk `package manager`. Anda bisa menggunakan `package manager` kesukaan anda.
 
 ```
+yarn install
+or
 npm install
 ```
 
 3. Run project
 
 ```
-npm run dev
-or
 yarn dev
+or
+npm run dev
 ```
 
 # Kontribusi
