@@ -1,6 +1,6 @@
 <div align="center">
 <h1>JAKARTA POST API</h1>
-<p><a href="https://jakpost.vercel.app/api">JAKARTA POST API</a> merupakan API hasil <i><b>scraping</b></i> website media berita <a href="https://www.thejakartapost.com/">Jakarta Post.</a> Jika anda menemukan error pada API ini, maka ada kemungkinan terjadi perubahan <i><b>DOM structure</b></i> pada web tersebut. Jika hal tersebut terjadi, anda bisa melaporkannya di <i><b>Issues</b></i>. Apabila anda ingin lebih jauh lagi seperti ikut kontribusi terhadap perubahan code, anda bisa memulainya dengan melakukan <i><b>pull request</b></i></p>
+<p><a href="https://jakpost.vercel.app/api">JAKARTA POST API</a> merupakan API hasil <i><b>scraping</b></i> website media berita <a href="https://www.thejakartapost.com/">Jakarta Post.</a> Jika anda menemukan error pada API ini, maka ada kemungkinan terjadi perubahan <i><b>DOM structure</b></i> pada web tersebut. Jika hal tersebut terjadi, anda bisa melaporkannya di <i><b>Issues</b></i>. Apabila anda ingin lebih jauh lagi seperti ikut kontribusi terhadap perubahan code, anda bisa memulainya dengan melakukan <i><b>pull request.</b></i></p>
 <strong>Mulai project anda dan jadilah produktif 🔥</strong>
 </div>
 
@@ -18,26 +18,26 @@
 
 ```
 ● /api/category
-  > Menampilkan data kategori dan sub kategori
+  > Menampilkan data kategori dan sub kategori.
 
 ● /api/category/[category]
-  > Menampilkan data berita dari kategori yang dipilih
+  > Menampilkan data berita dari kategori yang dipilih.
 
 ● /api/category/[category]/[sub_category]/page/[page]
   > Menampilkan data berita dari sub kategori yang dipilih.
 
 ● /api/detailpost/[slug]
-  > Menampilkan data detailpost
+  > Menampilkan data detailpost.
 
 ● /api/podcast/page/[page]
-  > Menampilkan semua data podcast
+  > Menampilkan semua data podcast.
 
 ● /api/detailpodcast/[slug]
-  > Menampilkan data detail podcast
+  > Menampilkan data detail podcast.
 
 ● /api/search/[search]/[sortby]/[page]
-  > Menampilkan hasil pencarian
-  > Opsi pencarian yang bisa anda pilih
+  > Menampilkan hasil pencarian.
+  > Opsi pencarian yang bisa anda pilih :
     1. date       🡆 pencarian berdasarkan tanggal
     2. relevance  🡆 pencarian berdasarkan relevansi
 
@@ -92,7 +92,7 @@ Dalam API ini ada beberapa data yang me-<i>return</i> `markdown`. Jika anda ingi
 
 # Instalasi
 
-Jika Anda ingin menambahkan project ini di komputer Anda sendiri, Anda bisa melakukan instalasi dengan mengikuti cara dibawah ini
+Jika Anda ingin menambahkan project ini di komputer Anda sendiri, Anda bisa melakukan instalasi dengan mengikuti cara dibawah ini :
 
 1. klon repositori ini.
 
