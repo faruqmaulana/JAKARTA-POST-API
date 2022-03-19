@@ -89,7 +89,7 @@ Dalam API ini ada beberapa data yang me-<i>return</i> `markdown`. Jika anda ingi
 
 # Instalasi
 
-Jika Anda ingin menambahkan projek ini di komputer Anda sendiri, Anda bisa melakukan instalasi dengan mengikuti cara dibawah ini
+Jika Anda ingin menambahkan project ini di komputer Anda sendiri, Anda bisa melakukan instalasi dengan mengikuti cara dibawah ini
 
 1. klon repositori ini.
 
@@ -117,11 +117,11 @@ npm run dev
 
 # Kontribusi
 
-Project ini bersifat <i><b>open source</b></i>. Apabila anda menemukan <i><b>bug</b></i> atau anda memiliki saran terkait format API yang baik, anda bisa melakukan <i><b>pull request</b></i> diproject ini. Saya akan terbuka dengan segala bentuk kontribusi yang anda berikan dengan tujuan membuat <i><b>project</b></i> ini jadi lebih baik.
+<i>Project</i> ini bersifat <i><b>open source</b></i>. Apabila anda menemukan <i><b>bug</b></i> atau anda memiliki saran terkait format API yang baik, anda bisa melakukan <i><b>pull request</b></i> diproject ini. Saya sangat terbuka dengan segala bentuk kontribusi yang anda berikan dengan tujuan membuat <i>project</i> ini menjadi lebih baik.
 
 # Showcase
 
-Jika Anda menggunakan API ini di aplikasi yang anda buat, Anda bisa mendaftarkan projek Anda di bawah ini :
+Jika Anda menggunakan API ini di <i>project</i> yang anda buat, Anda bisa mendaftarkan <i>project</i> Anda di bawah ini :
 
 - jadilah yang pertama 🔥
 
@@ -136,20 +136,8 @@ Jika Anda menggunakan API ini di aplikasi yang anda buat, Anda bisa mendaftarkan
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- markdownlint-disable -->
-<table>
-  <tr>
-    <td align="center"><a href="https://fm-space.vercel.app">
-    <img src="https://avatars.githubusercontent.com/u/88839109?v=4?s=100" width="100px;" alt=""/>
-    <br />
-    <sub><b>Faruq Maulana</b></sub>
-    </a>
-    <br />
-    <a href="https://github.com/faruqmaulana/JAKARTA-POST-API/commits?author=faruqmaulana" title="Code">💻</a> 
-    <a href="#refactoringCode-faruqmaulana" title="Refactoring Code">🎨</a>
-    <a href="#maintenance-faruqmaulana" title="Maintenance">🚧</a> 
-    <a href="#ideas-faruqmaulana" title="Ideas, Planning, & Feedback">🤔</a>
-    </td>
-  </tr>
+<table> <tr>
+    <td align="center"><a href="https://fm-space.vercel.app"> <img src="https://avatars.githubusercontent.com/u/88839109?v=4?s=100" width="100px;" alt=""/> <br /> <sub><b>Faruq Maulana</b></sub> </a> <br /> <a href="https://github.com/faruqmaulana/JAKARTA-POST-API/commits?author=faruqmaulana" title="Code">💻</a> <a href="#refactoringCode-faruqmaulana" title="Refactoring Code">🔨</a> <a href="#Documentation-faruqmaulana" title="Documentation">📖</a> <a href="#maintenance-faruqmaulana" title="Maintenance">🚧</a> <a href="#ideas-faruqmaulana" title="Ideas, Planning, & Feedback">🤔</a> </td> </tr>
 </table>
 
 <!-- markdownlint-restore -->
