@@ -25,8 +25,8 @@
   > Semua sub kategori memiliki paginasi kecuali index.
 
   === Detail ===
-  > https://jakpost.vercel.app/api/category/indonesia                 => paginasi  ❌
-  > https://jakpost.vercel.app/api/category/indonesia/politics/page/2 => paginasi  ✅
+  > https://jakpost.vercel.app/api/category/indonesia 🡆 paginasi  ❌
+  > https://jakpost.vercel.app/api/category/indonesia/politics/page/2 🡆 paginasi  ✅
 
 
 ● /api/detailpost/[slug]
