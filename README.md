@@ -46,7 +46,7 @@
 
 ## Paginasi
 
-Beberapa route memiliki kategori, untuk lebih detailnya bisa anda cek dibawah :
+Beberapa route memiliki paginasi, untuk lebih detailnya bisa anda cek dibawah :
 
 ```bash
 
