@@ -19,7 +19,7 @@ export default async function handler(req, res) {
     //make request
     const { $, status } = await scrapeSite(url);
 
-    const date = $(".post-like")
+    const published_at = $(".post-like")
       .text()
       .replace(" /   ", "● ")
       .replace(/^\s+|\s+$/gm, "")
@@ -38,11 +38,11 @@ export default async function handler(req, res) {
       status,
       important: MARKDOWN("post_content"),
       detail_podcast: {
-        date,
         title,
         image,
         audio,
         post_content,
+        published_at,
       },
     });
   } catch {

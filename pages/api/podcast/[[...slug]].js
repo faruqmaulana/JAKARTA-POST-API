@@ -18,7 +18,7 @@ export default async function (req, res) {
       .replace(BASE_URL, VERCEL_BASE_URL + "/detailpodcast/")
       .replace(".html", "");
 
-    const date = $(".boxPodcast span.date")
+    const published_at = $(".boxPodcast span.date")
       .first()
       .clone()
       .children()
@@ -35,13 +35,13 @@ export default async function (req, res) {
       link,
       title,
       image,
-      date,
       duration,
+      published_at,
     };
 
     const podcast = [];
     $(".columns .boxPodcast").each((i, el) => {
-      const date = $(el)
+      const published_at = $(el)
         .find("span.date")
         .clone()
         .children()
@@ -64,8 +64,8 @@ export default async function (req, res) {
         link,
         title,
         image,
-        date,
         duration,
+        published_at,
       });
     });
 
