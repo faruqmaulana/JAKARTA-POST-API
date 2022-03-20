@@ -46,7 +46,7 @@
 
 ## Paginasi
 
-Bebebrapa route memiliki kategori, untuk lebih detailnya bisa anda cek dibawah :
+Beberapa route memiliki kategori, untuk lebih detailnya bisa anda cek dibawah :
 
 ```bash
 
@@ -61,7 +61,7 @@ Bebebrapa route memiliki kategori, untuk lebih detailnya bisa anda cek dibawah :
   > https://jakpost.vercel.app/api/search/ukraine/relevance/1          || paginasi ✅
 
   note : jika anda tidak menambahkan parameter halaman, maka tidak akan terjadi error.
-         karena halaman akan otomatis default ke halaman 1.
+  karena halaman akan otomatis default ke halaman 1.
 
 ```
 
@@ -71,23 +71,23 @@ Dalam API ini ada beberapa data yang me-<i>return</i> `markdown`. Jika anda ingi
 
 ## ⚠️ Data yang me-return `markdown` ⚠️
 
-1. headline berita
+1. headline berita `category`
    <br>
    route ➡️ [/api/category/[category]](https://jakpost.vercel.app/api/category/indonesia)
    <br>
    route ➡️ [/api/category/[category]/[sub_category]/page/[page]](https://jakpost.vercel.app/api/category/indonesia)
 
-2. post_content
+2. headline berita `search engine`
+   <br>
+   route ➡️ [/api/search/[search]/[sortby]/[page]](https://jakpost.vercel.app/api/search/ukraine/date/1)
+
+3. post_content `detailpost`
    <br>
    route ➡️ [/api/detailpost/[slug]](https://jakpost.vercel.app/api/detailpost/indonesia/2022/03/18/government-outlines-carbon-sink-strategy-in-new-regulation)
 
-3. post_content `detailpodcast`
+4. post_content `detailpodcast`
    <br>
    route ➡️ [/api/detailpodcast/[slug]](https://jakpost.vercel.app/api/detailpodcast/multimedia/2020/08/27/sculpting-nations-the-politics-around-statues-in-asia)
-
-4. headline berita `search engine`
-   <br>
-   route ➡️ [/api/search/[search]/[sortby]/[page]](https://jakpost.vercel.app/api/search/ukraine/date/1)
 
 # Teknologi yang di gunakan
 
