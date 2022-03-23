@@ -79,6 +79,12 @@ export const getDynamicCategory = async (endpoint) => {
 
     const posts = [];
     $(".tjp-newsListing .listNews").each((i, el) => {
+      const title = $(el)
+        .find(".titleNews")
+        .text()
+        .trim()
+        .replace(/\u200B/g, "");
+
       const badge = $(el)
         .find("a span.premiumBadge span")
         .text()
@@ -94,7 +100,6 @@ export const getDynamicCategory = async (endpoint) => {
         $(el).find(".imageLatest a").attr("href").replace(".html", "");
 
       const category = $(el).find(".dt-news").text();
-      const title = $(el).find(".titleNews").text().trim();
       const premium_badge = badge === "" ? "not premium" : badge;
       const image = $(".imageLatest", el).find("img").attr("data-src");
       const pusblised_at = $(el).find(".latestDetail span.date").last().text();
