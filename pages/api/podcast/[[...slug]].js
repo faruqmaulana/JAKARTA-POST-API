@@ -2,7 +2,7 @@ import { checkEmptyObj, scrapeSite } from "../utils/utils";
 import runMiddleware from "../middleware/middleware";
 import { cors, BASE_URL, VERCEL_BASE_URL, ERROR_MESSAGE } from "../utils/const";
 
-export default async function (req, res) {
+export default async function handler(req, res) {
   runMiddleware(req, res, cors);
 
   try {
