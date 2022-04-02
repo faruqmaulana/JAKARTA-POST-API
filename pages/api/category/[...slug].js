@@ -1,9 +1,9 @@
-import middleware from "../middleware/middleware";
+import runMiddleware from "../middleware/middleware";
 import { getDynamicCategory } from "../utils/get-dynamic-category";
 import { cors, ERROR_MESSAGE, HASTAG_COMMENTARY } from "../utils/const";
 
 export default async function handler(req, res) {
-  await middleware(req, res, cors);
+  await runMiddleware(req, res, cors);
 
   try {
     //get query params

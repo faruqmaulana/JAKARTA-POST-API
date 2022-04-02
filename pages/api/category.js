@@ -1,4 +1,4 @@
-import middleware from "./middleware/middleware";
+import runMiddleware from "./middleware/middleware";
 import {
   cors,
   BASE_URL_SLUG,
@@ -8,7 +8,7 @@ import {
 import { scrapeSite } from "./utils/utils";
 
 export default async function handler(req, res) {
-  await middleware(req, res, cors);
+  await runMiddleware(req, res, cors);
 
   try {
     // make request
