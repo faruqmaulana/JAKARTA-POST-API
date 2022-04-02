@@ -2,7 +2,7 @@ import { BASE_URL } from "./const";
 import puppeteer from "puppeteer";
 import cheerio from "cheerio";
 import axios from "axios";
-import chrome from "chrome-aws-lambda";
+// import chrome from "chrome-aws-lambda";
 
 export const scrapeSite = async (endpoint) => {
   try {
