@@ -19,12 +19,16 @@ export default async function search(req, res) {
     const query = search[0];
     const sortby = search[1] !== "relevance" ? search[1] : "";
     const page = search[2] !== undefined ? search[2] : "";
+    console.log(
+      `search?q=${query}#gsc.tab=0&gsc.q=${query}&gsc.sort=${sortby}&gsc.page=${page}`
+    );
 
     //make request
     const { $ } = await puppeteerOpenBrowser(
       `search?q=${query}#gsc.tab=0&gsc.q=${query}&gsc.sort=${sortby}&gsc.page=${page}`
     );
 
+    console.log($.html());
     const data = [];
     $(".gsc-expansionArea .gsc-webResult").each((i, el) => {
       const title = $(el)
