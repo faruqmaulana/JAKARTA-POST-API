@@ -13,7 +13,7 @@ export default async function handler(req, res) {
   try {
     // make request
     const { $, status } = await scrapeSite("");
-    console.log($.html());
+
     // get category
     let category = [];
     for (let iterate = 4; iterate <= 13; iterate++) {
