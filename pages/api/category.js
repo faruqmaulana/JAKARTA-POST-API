@@ -17,11 +17,13 @@ export default async function handler(req, res) {
     // get category
     let category = [];
     for (let iterate = 4; iterate <= 13; iterate++) {
-      const getLink = $("li.tjp-li-" + iterate)
+      const isLink = $("li.tjp-li-" + iterate)
         .children()
         .first()
         .attr("href")
-        .replace(BASE_URL_SLUG, "");
+
+      // check if data is undefined 
+      const getLink = isLink && isLink.replace(BASE_URL_SLUG, "");
 
       const link =
         getLink === "/multimedia"
@@ -70,9 +72,8 @@ export default async function handler(req, res) {
     category.splice(1, 1);
     // delete "Longform Biz" sub-category, because "Longform Biz" sub-category does not contains news or podcasts
     category[7].subCategory.splice(2, 1);
-
     return res.json({ status, category });
-  } catch {
+  } catch (e) {
     res.status(404).json({ status: 404, error: ERROR_MESSAGE });
   }
 }

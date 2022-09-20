@@ -16,8 +16,8 @@ export default async function handler(req, res) {
       getRequestUrl === "most-viewed?"
         ? getRequestUrl.replace("?", "")
         : getRequestUrl === HASTAG_COMMENTARY
-        ? getRequestUrl.replace(HASTAG_COMMENTARY, "hashtag/Commentary")
-        : getRequestUrl;
+          ? getRequestUrl.replace(HASTAG_COMMENTARY, "hashtag/Commentary")
+          : getRequestUrl;
 
     //make request
     const { status, important, featured_post, posts, pagination } =
@@ -30,7 +30,7 @@ export default async function handler(req, res) {
       posts,
       pagination: slug.length === 1 ? null : pagination,
     });
-  } catch {
+  } catch (e) {
     res.status(404).json({ status: 404, error: ERROR_MESSAGE });
   }
 }
